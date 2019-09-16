@@ -1,8 +1,8 @@
 name: argon_buttons_flutter
-description: A new Flutter package project.
+description: Create beautiful Loading and Timer buttons.
 version: 0.0.1
-author:
-homepage:
+author: Yogesh Kumawat<ykumawat098@gmail.com>
+homepage: https://github.com/iamyogik/argon_buttons_flutter
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
