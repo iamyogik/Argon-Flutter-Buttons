@@ -2,14 +2,17 @@
 
 Create beautiful Loading and Timer buttons using Argon Buttons. No need to worry about handling animations or timers as this pakage does all the messy stuff for you.
 
-**Table of Contents**
 
-[TOCM]
-
-
-# Usage
+# Getting Started
 
 You basically have two widgets that you can use, **ArgonButton** and **ArgonTimerButton**. ArgonButton helps you create beautiful loading animation in your buttons. ArgonTimerButton helps you create timer buttons that you can use to handle stuff like "Resend OTP" => "Wait for 10 sec".
+
+## Demo
+
+
+![Argon Timer Button Demo](demo/argon_timer_buttons.gif)
+
+![Argon Loader Button Demo](demo/argon_loader_buttons.gif)
 
 
 ## ArgonButton
@@ -30,7 +33,7 @@ ArgonButton(
         color: Colors.white,
         fontSize: 18,
         fontWeight: FontWeight.w700
-		),
+	),
   ),
   loader: Container(
     padding: EdgeInsets.all(10),
@@ -55,16 +58,16 @@ Using onTap:
 ArgonButton(
 [...]
 onTap:(startLoading, stopLoading, btnState){
-	if(btnState == ButtonState.Idle){
-		startLoading();
-		await doNetworkRequest();
-		stopLoading();
-	}
+  if(btnState == ButtonState.Idle){
+    startLoading();
+    await doNetworkRequest();
+    stopLoading();
+  }
 }
 )
 ```
 
-###Properties
+### Properties
 - **roundLoadingShape**(Default  true) : When set to true, it uses borderRadius to creates a round button while in Busy/Loading state
 - **width**: Width of the button when in Idle state
 - **minWidth**: Width of the button when in Busy/Loading state. Default value is equal to height in order to create a completely round loading button
@@ -83,7 +86,7 @@ Example:
 
 ```dart
 ArgonTimerButton(
- initialTimer: 10, // Optional
+  initialTimer: 10, // Optional
   height: 50,
   width: MediaQuery.of(context).size.width * 0.45,
   minWidth: MediaQuery.of(context).size.width * 0.30,
@@ -94,7 +97,8 @@ ArgonTimerButton(
     style: TextStyle(
         color: Colors.black,
         fontSize: 18,
-        fontWeight: FontWeight.w700),
+        fontWeight: FontWeight.w700
+    ),
   ),
   loader: (timeLeft) {
     return Text(
@@ -102,7 +106,8 @@ ArgonTimerButton(
       style: TextStyle(
           color: Colors.black,
           fontSize: 18,
-          fontWeight: FontWeight.w700),
+          fontWeight: FontWeight.w700
+        ),
     );
   },
   onTap: (startTimer, btnState) {
@@ -116,7 +121,7 @@ The onTap function recieves a **startTimer(int count)** function and a **btnStat
 The **loader** in this case is a button that recieves time left from the timer and has to return a widget which will be the child in the button.
 
 
-###Properties
+### Properties
 - **initialTimer** (Optional): it is a optional value given to start the timer when the widget is build
 - **roundLoadingShape**(Default  true) : When set to true, it uses borderRadius to creates a round button while in Busy/Loading state
 - **width**: Width of the button when in Idle state
@@ -128,7 +133,7 @@ The **loader** in this case is a button that recieves time left from the timer a
 - **onTap**: (startTimer, btnState) : Function that is called when you click on the button
 
 
-###More
+### More
 - **duration**: Duration of the animation
 - **curve**: Curve of animation
 - **reverseCurve**: Curve of reverse animation
