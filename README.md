@@ -10,7 +10,7 @@ You basically have two widgets that you can use, **ArgonButton** and **ArgonTime
 ## Demo
 
 
-![Argon Timer Button Demo](demo/argon_timer_buttons.gif) ![Argon Loader Button Demo](demo/argon_loader_buttons.gif)
+![Argon Timer Button Demo](demo/argon_timer_buttons.gif)   ![Argon Loader Button Demo](demo/argon_loader_buttons.gif)
 
 
 ## ArgonButton

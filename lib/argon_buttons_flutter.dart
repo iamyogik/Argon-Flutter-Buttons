@@ -1,14 +1,10 @@
 library argon_buttons_flutter;
 
-
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'dart:ui' show lerpDouble;
 
 enum ButtonState { Busy, Idle }
-
-
-
 
 class ArgonButton extends StatefulWidget {
   final double height;
@@ -43,42 +39,38 @@ class ArgonButton extends StatefulWidget {
   final Color disabledColor;
   final Color disabledTextColor;
 
-  ArgonButton({
-    @required this.height,
-    @required this.width,
-    this.minWidth: 0,
-    this.loader,
-    this.animationDuration: const Duration(milliseconds: 450),
-    this.curve: Curves.easeInOutCirc,
-    this.reverseCurve: Curves.easeInOutCirc,
-    @required this.child,
-    this.onTap,
-    this.color,
-    this.focusColor,
-    this.hoverColor,
-    this.highlightColor,
-    this.splashColor,
-    this.colorBrightness,
-    this.elevation,
-    this.focusElevation,
-    this.hoverElevation,
-    this.highlightElevation,
-    this.padding: const EdgeInsets.all(0),
-    this.borderRadius: 0.0,
-    this.clipBehavior: Clip.none,
-    this.focusNode,
-    this.autofocus: false,
-    this.materialTapTargetSize,
-    this.roundLoadingShape: true,
-    this.borderSide: const BorderSide(
-          color: Colors.transparent, 
-          width: 0
-        ),
-    this.disabledElevation,
-    this.disabledColor,
-    this.disabledTextColor
-  
-  })  : assert(autofocus != null),
+  ArgonButton(
+      {@required this.height,
+      @required this.width,
+      this.minWidth: 0,
+      this.loader,
+      this.animationDuration: const Duration(milliseconds: 450),
+      this.curve: Curves.easeInOutCirc,
+      this.reverseCurve: Curves.easeInOutCirc,
+      @required this.child,
+      this.onTap,
+      this.color,
+      this.focusColor,
+      this.hoverColor,
+      this.highlightColor,
+      this.splashColor,
+      this.colorBrightness,
+      this.elevation,
+      this.focusElevation,
+      this.hoverElevation,
+      this.highlightElevation,
+      this.padding: const EdgeInsets.all(0),
+      this.borderRadius: 0.0,
+      this.clipBehavior: Clip.none,
+      this.focusNode,
+      this.autofocus: false,
+      this.materialTapTargetSize,
+      this.roundLoadingShape: true,
+      this.borderSide: const BorderSide(color: Colors.transparent, width: 0),
+      this.disabledElevation,
+      this.disabledColor,
+      this.disabledTextColor})
+      : assert(autofocus != null),
         assert(elevation == null || elevation >= 0.0),
         assert(focusElevation == null || focusElevation >= 0.0),
         assert(hoverElevation == null || hoverElevation >= 0.0),
@@ -123,7 +115,6 @@ class _ArgonButtonState extends State<ArgonButton>
 
     minWidth = widget.height;
     loaderWidth = widget.height;
-
   }
 
   void animateForward() {
@@ -144,7 +135,6 @@ class _ArgonButtonState extends State<ArgonButton>
       return a + (b - a) * t;
     }
   }
-
 
   get minWidth => _minWidth;
   set minWidth(double w) {
@@ -208,10 +198,6 @@ class _ArgonButtonState extends State<ArgonButton>
   }
 }
 
-
-
-
-
 class ArgonTimerButton extends StatefulWidget {
   final double height;
   final double width;
@@ -221,8 +207,7 @@ class ArgonTimerButton extends StatefulWidget {
   final Curve curve;
   final Curve reverseCurve;
   final Widget child;
-  final Function(Function startTimer,
-      ButtonState btnState) onTap;
+  final Function(Function startTimer, ButtonState btnState) onTap;
   final Color color;
   final Color focusColor;
   final Color hoverColor;
@@ -246,42 +231,39 @@ class ArgonTimerButton extends StatefulWidget {
   final Color disabledTextColor;
   final int initialTimer;
 
-  ArgonTimerButton({
-    @required this.height,
-    @required this.width,
-    this.minWidth: 0,
-    this.loader,
-    this.animationDuration: const Duration(milliseconds: 450),
-    this.curve: Curves.easeInOutCirc,
-    this.reverseCurve: Curves.easeInOutCirc,
-    @required this.child,
-    this.onTap,
-    this.color,
-    this.focusColor,
-    this.hoverColor,
-    this.highlightColor,
-    this.splashColor,
-    this.colorBrightness,
-    this.elevation,
-    this.focusElevation,
-    this.hoverElevation,
-    this.highlightElevation,
-    this.padding: const EdgeInsets.all(0),
-    this.borderRadius: 0.0,
-    this.clipBehavior: Clip.none,
-    this.focusNode,
-    this.autofocus: false,
-    this.materialTapTargetSize,
-    this.roundLoadingShape: true,
-    this.borderSide: const BorderSide(
-          color: Colors.transparent, 
-          width: 0
-        ),
-    this.disabledElevation,
-    this.disabledColor,
-    this.disabledTextColor,
-    this.initialTimer: 0
-  })  : assert(autofocus != null),
+  ArgonTimerButton(
+      {@required this.height,
+      @required this.width,
+      this.minWidth: 0,
+      this.loader,
+      this.animationDuration: const Duration(milliseconds: 450),
+      this.curve: Curves.easeInOutCirc,
+      this.reverseCurve: Curves.easeInOutCirc,
+      @required this.child,
+      this.onTap,
+      this.color,
+      this.focusColor,
+      this.hoverColor,
+      this.highlightColor,
+      this.splashColor,
+      this.colorBrightness,
+      this.elevation,
+      this.focusElevation,
+      this.hoverElevation,
+      this.highlightElevation,
+      this.padding: const EdgeInsets.all(0),
+      this.borderRadius: 0.0,
+      this.clipBehavior: Clip.none,
+      this.focusNode,
+      this.autofocus: false,
+      this.materialTapTargetSize,
+      this.roundLoadingShape: true,
+      this.borderSide: const BorderSide(color: Colors.transparent, width: 0),
+      this.disabledElevation,
+      this.disabledColor,
+      this.disabledTextColor,
+      this.initialTimer: 0})
+      : assert(autofocus != null),
         assert(elevation == null || elevation >= 0.0),
         assert(focusElevation == null || focusElevation >= 0.0),
         assert(hoverElevation == null || hoverElevation >= 0.0),
@@ -316,8 +298,6 @@ class _ArgonTimerButtonState extends State<ArgonTimerButton>
         parent: _controller,
         curve: widget.curve,
         reverseCurve: widget.reverseCurve));
-    
-    
 
     _animation.addStatusListener((status) {
       if (status == AnimationStatus.dismissed) {
@@ -327,18 +307,15 @@ class _ArgonTimerButtonState extends State<ArgonTimerButton>
       }
     });
 
-
-    if(widget.initialTimer == 0){
-      btn =  ButtonState.Idle;
-    }else{
+    if (widget.initialTimer == 0) {
+      btn = ButtonState.Idle;
+    } else {
       startTimer(widget.initialTimer);
-      btn =  ButtonState.Busy;
+      btn = ButtonState.Busy;
     }
-
 
     minWidth = widget.height;
     loaderWidth = widget.height;
-
   }
 
   void animateForward() {
@@ -370,12 +347,11 @@ class _ArgonTimerButtonState extends State<ArgonTimerButton>
   }
 
   void startTimer(int newTime) {
-    if(newTime == 0){
-      throw("Count Down Time can not be null");
+    if (newTime == 0) {
+      throw ("Count Down Time can not be null");
     }
 
     animateForward();
-
 
     setState(() {
       secondsLeft = newTime;
@@ -400,7 +376,6 @@ class _ArgonTimerButtonState extends State<ArgonTimerButton>
     );
   }
 
-
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
@@ -419,8 +394,7 @@ class _ArgonTimerButtonState extends State<ArgonTimerButton>
         height: widget.height,
         shape: RoundedRectangleBorder(
           side: widget.borderSide,
-          borderRadius: BorderRadius.circular(
-            widget.roundLoadingShape
+          borderRadius: BorderRadius.circular(widget.roundLoadingShape
               ? lerpDouble(
                   widget.borderRadius, widget.height / 2, _animation.value)
               : widget.borderRadius),
@@ -445,22 +419,19 @@ class _ArgonTimerButtonState extends State<ArgonTimerButton>
             disabledColor: widget.disabledColor,
             disabledTextColor: widget.disabledTextColor,
             onPressed: () {
-              widget.onTap((newCounter)=>startTimer(newCounter), btn);
+              widget.onTap((newCounter) => startTimer(newCounter), btn);
             },
-            child: btn == ButtonState.Idle 
-            ? widget.child 
-            : StreamBuilder(
-                stream: emptyStream,
-                builder: (context, snapshot) {
-                  if (secondsLeft == 0) {
-                    animateReverse();
-                  }
-                  return widget.loader(secondsLeft);
-                })
-            ),
+            child: btn == ButtonState.Idle
+                ? widget.child
+                : StreamBuilder(
+                    stream: emptyStream,
+                    builder: (context, snapshot) {
+                      if (secondsLeft == 0) {
+                        animateReverse();
+                      }
+                      return widget.loader(secondsLeft);
+                    })),
       ),
     );
   }
 }
-
-
