@@ -30,7 +30,6 @@ class ArgonButton extends StatefulWidget {
   final EdgeInsetsGeometry padding;
   final Clip clipBehavior;
   final FocusNode focusNode;
-  final bool autofocus;
   final MaterialTapTargetSize materialTapTargetSize;
   final bool roundLoadingShape;
   final double borderRadius;
@@ -63,15 +62,13 @@ class ArgonButton extends StatefulWidget {
       this.borderRadius: 0.0,
       this.clipBehavior: Clip.none,
       this.focusNode,
-      this.autofocus: false,
       this.materialTapTargetSize,
       this.roundLoadingShape: true,
       this.borderSide: const BorderSide(color: Colors.transparent, width: 0),
       this.disabledElevation,
       this.disabledColor,
       this.disabledTextColor})
-      : assert(autofocus != null),
-        assert(elevation == null || elevation >= 0.0),
+      : assert(elevation == null || elevation >= 0.0),
         assert(focusElevation == null || focusElevation >= 0.0),
         assert(hoverElevation == null || hoverElevation >= 0.0),
         assert(highlightElevation == null || highlightElevation >= 0.0),
@@ -183,7 +180,6 @@ class _ArgonButtonState extends State<ArgonButton>
             padding: widget.padding,
             clipBehavior: widget.clipBehavior,
             focusNode: widget.focusNode,
-            autofocus: widget.autofocus,
             materialTapTargetSize: widget.materialTapTargetSize,
             disabledElevation: widget.disabledElevation,
             disabledColor: widget.disabledColor,
@@ -221,7 +217,6 @@ class ArgonTimerButton extends StatefulWidget {
   final EdgeInsetsGeometry padding;
   final Clip clipBehavior;
   final FocusNode focusNode;
-  final bool autofocus;
   final MaterialTapTargetSize materialTapTargetSize;
   final bool roundLoadingShape;
   final double borderRadius;
@@ -255,7 +250,6 @@ class ArgonTimerButton extends StatefulWidget {
       this.borderRadius: 0.0,
       this.clipBehavior: Clip.none,
       this.focusNode,
-      this.autofocus: false,
       this.materialTapTargetSize,
       this.roundLoadingShape: true,
       this.borderSide: const BorderSide(color: Colors.transparent, width: 0),
@@ -263,8 +257,7 @@ class ArgonTimerButton extends StatefulWidget {
       this.disabledColor,
       this.disabledTextColor,
       this.initialTimer: 0})
-      : assert(autofocus != null),
-        assert(elevation == null || elevation >= 0.0),
+      : assert(elevation == null || elevation >= 0.0),
         assert(focusElevation == null || focusElevation >= 0.0),
         assert(hoverElevation == null || hoverElevation >= 0.0),
         assert(highlightElevation == null || highlightElevation >= 0.0),
@@ -413,7 +406,6 @@ class _ArgonTimerButtonState extends State<ArgonTimerButton>
             padding: widget.padding,
             clipBehavior: widget.clipBehavior,
             focusNode: widget.focusNode,
-            autofocus: widget.autofocus,
             materialTapTargetSize: widget.materialTapTargetSize,
             disabledElevation: widget.disabledElevation,
             disabledColor: widget.disabledColor,

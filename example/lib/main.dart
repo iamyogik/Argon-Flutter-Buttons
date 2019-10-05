@@ -33,6 +33,7 @@ class ArgonButtonExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -123,7 +124,7 @@ class ArgonButtonExample extends StatelessWidget {
                   startTimer(5);
                 }
               },
-              initialTimer: 10,
+              // initialTimer: 10,
               child: Text(
                 "Resend OTP",
                 style: TextStyle(
