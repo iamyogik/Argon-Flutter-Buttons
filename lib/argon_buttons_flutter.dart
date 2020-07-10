@@ -114,6 +114,12 @@ class _ArgonButtonState extends State<ArgonButton>
     loaderWidth = widget.height;
   }
 
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   void animateForward() {
     setState(() {
       btn = ButtonState.Busy;
@@ -309,6 +315,12 @@ class _ArgonTimerButtonState extends State<ArgonTimerButton>
 
     minWidth = widget.height;
     loaderWidth = widget.height;
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 
   void animateForward() {
