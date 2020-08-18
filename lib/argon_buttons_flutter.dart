@@ -319,6 +319,7 @@ class _ArgonTimerButtonState extends State<ArgonTimerButton>
 
   @override
   void dispose() {
+    if (_timer != null) _timer.cancel();
     _controller.dispose();
     super.dispose();
   }
