@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
 }
 
 class ArgonButtonExample extends StatelessWidget {
-  const ArgonButtonExample({Key key}) : super(key: key);
+  const ArgonButtonExample({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
