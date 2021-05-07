@@ -16,4 +16,4 @@
 
 ## [1.1.0] - 2021-05-07.
 
-* Cancel timer when button is disposed
+* Flutter 2.0 Null safety
