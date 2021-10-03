@@ -190,11 +190,13 @@ class _ArgonButtonState extends State<ArgonButton>
             disabledElevation: widget.disabledElevation,
             disabledColor: widget.disabledColor,
             disabledTextColor: widget.disabledTextColor,
-            onPressed: () {
-              widget.onTap!(
-                  () => animateForward(), () => animateReverse(), btn);
-              // btnClicked();
-            },
+            onPressed: widget.onTap == null
+                ? null
+                : () => widget.onTap!(
+                      () => animateForward(),
+                      () => animateReverse(),
+                      btn,
+                    ),
             child: btn == ButtonState.Idle ? widget.child : widget.loader),
       ),
     );
@@ -424,9 +426,10 @@ class _ArgonTimerButtonState extends State<ArgonTimerButton>
             disabledElevation: widget.disabledElevation,
             disabledColor: widget.disabledColor,
             disabledTextColor: widget.disabledTextColor,
-            onPressed: () {
-              widget.onTap!((newCounter) => startTimer(newCounter), btn);
-            },
+            onPressed: widget.onTap == null
+                ? null
+                : () =>
+                    widget.onTap!((newCounter) => startTimer(newCounter), btn),
             child: btn == ButtonState.Idle
                 ? widget.child
                 : StreamBuilder(
