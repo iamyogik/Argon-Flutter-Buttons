@@ -15,8 +15,7 @@ class ArgonButton extends StatefulWidget {
   final Curve curve;
   final Curve reverseCurve;
   final Widget child;
-  final Function(
-      Function startLoading, Function stopLoading, ButtonState btnState)? onTap;
+  final Function(Function startLoading, Function stopLoading, ButtonState btnState)? onTap;
   final Color? color;
   final Color? focusColor;
   final Color? hoverColor;
@@ -79,8 +78,7 @@ class ArgonButton extends StatefulWidget {
   _ArgonButtonState createState() => _ArgonButtonState();
 }
 
-class _ArgonButtonState extends State<ArgonButton>
-    with TickerProviderStateMixin {
+class _ArgonButtonState extends State<ArgonButton> with TickerProviderStateMixin {
   double? loaderWidth;
 
   late Animation<double> _animation;
@@ -94,13 +92,9 @@ class _ArgonButtonState extends State<ArgonButton>
   void initState() {
     super.initState();
 
-    _controller =
-        AnimationController(vsync: this, duration: widget.animationDuration);
+    _controller = AnimationController(vsync: this, duration: widget.animationDuration);
 
-    _animation = Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-        parent: _controller,
-        curve: widget.curve,
-        reverseCurve: widget.reverseCurve));
+    _animation = Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(parent: _controller, curve: widget.curve, reverseCurve: widget.reverseCurve));
 
     _animation.addStatusListener((status) {
       if (status == AnimationStatus.dismissed) {
@@ -140,6 +134,7 @@ class _ArgonButtonState extends State<ArgonButton>
   }
 
   double get minWidth => _minWidth;
+
   set minWidth(double w) {
     if (widget.minWidth == 0) {
       _minWidth = w;
@@ -166,12 +161,9 @@ class _ArgonButtonState extends State<ArgonButton>
         height: widget.height,
         shape: RoundedRectangleBorder(
           side: widget.borderSide,
-          borderRadius: BorderRadius.circular(widget.roundLoadingShape
-              ? lerpDouble(
-                  widget.borderRadius, widget.height / 2, _animation.value)!
-              : widget.borderRadius),
+          borderRadius: BorderRadius.circular(widget.roundLoadingShape ? lerpDouble(widget.borderRadius, widget.height / 2, _animation.value)! : widget.borderRadius),
         ),
-        child: RaisedButton(
+        child: MaterialButton(
             key: _buttonKey,
             color: widget.color,
             focusColor: widget.focusColor,
@@ -191,8 +183,7 @@ class _ArgonButtonState extends State<ArgonButton>
             disabledColor: widget.disabledColor,
             disabledTextColor: widget.disabledTextColor,
             onPressed: () {
-              widget.onTap!(
-                  () => animateForward(), () => animateReverse(), btn);
+              widget.onTap!(() => animateForward(), () => animateReverse(), btn);
               // btnClicked();
             },
             child: btn == ButtonState.Idle ? widget.child : widget.loader),
@@ -275,8 +266,7 @@ class ArgonTimerButton extends StatefulWidget {
   _ArgonTimerButtonState createState() => _ArgonTimerButtonState();
 }
 
-class _ArgonTimerButtonState extends State<ArgonTimerButton>
-    with TickerProviderStateMixin {
+class _ArgonTimerButtonState extends State<ArgonTimerButton> with TickerProviderStateMixin {
   double? loaderWidth;
 
   late Animation<double> _animation;
@@ -291,13 +281,9 @@ class _ArgonTimerButtonState extends State<ArgonTimerButton>
   void initState() {
     super.initState();
 
-    _controller =
-        AnimationController(vsync: this, duration: widget.animationDuration);
+    _controller = AnimationController(vsync: this, duration: widget.animationDuration);
 
-    _animation = Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-        parent: _controller,
-        curve: widget.curve,
-        reverseCurve: widget.reverseCurve));
+    _animation = Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(parent: _controller, curve: widget.curve, reverseCurve: widget.reverseCurve));
 
     _animation.addStatusListener((status) {
       if (status == AnimationStatus.dismissed) {
@@ -345,6 +331,7 @@ class _ArgonTimerButtonState extends State<ArgonTimerButton>
   }
 
   double get minWidth => _minWidth;
+
   set minWidth(double w) {
     if (widget.minWidth == 0) {
       _minWidth = w;
@@ -401,12 +388,9 @@ class _ArgonTimerButtonState extends State<ArgonTimerButton>
         height: widget.height,
         shape: RoundedRectangleBorder(
           side: widget.borderSide,
-          borderRadius: BorderRadius.circular(widget.roundLoadingShape
-              ? lerpDouble(
-                  widget.borderRadius, widget.height / 2, _animation.value)!
-              : widget.borderRadius),
+          borderRadius: BorderRadius.circular(widget.roundLoadingShape ? lerpDouble(widget.borderRadius, widget.height / 2, _animation.value)! : widget.borderRadius),
         ),
-        child: RaisedButton(
+        child: MaterialButton(
             color: widget.color,
             focusColor: widget.focusColor,
             hoverColor: widget.hoverColor,
@@ -415,7 +399,7 @@ class _ArgonTimerButtonState extends State<ArgonTimerButton>
             colorBrightness: widget.colorBrightness,
             elevation: widget.elevation,
             focusElevation: widget.focusElevation,
-            hoverElevation: widget.hoverElevation,
+            hoverElevation: widget.hoverElevation ?? 1,
             highlightElevation: widget.highlightElevation,
             padding: widget.padding,
             clipBehavior: widget.clipBehavior,
